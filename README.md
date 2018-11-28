@@ -6,8 +6,10 @@ Super simple component just throttle a list to reduce rendering cost of long lis
 ## Installation
 
 ```
-$ npm install react-list-throttle
+$ npm i react-list-throttle-component
 ```
+
+or `yarn add`
 
 ## Usage
 
