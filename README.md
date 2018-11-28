@@ -62,3 +62,7 @@ interface Props<T> {
 }
 ```
 
+
+## Licensed
+
+MIT
