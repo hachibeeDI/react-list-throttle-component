@@ -16,12 +16,12 @@ interface ChildArgument<T> {
 interface Props<T> {
   items: ReadonlyArray<T>;
   previousPageBuffer?: number;
-  contentPerPage?: number;
+  contentsPerPage?: number;
   children(arg: ChildArgument<T>): ReactNode;
 }
 
 export default class ListThrottle<T> extends Component<Props<T>, State> {
-  static defaultProps = {previousPageBuffer: PREVIOUS_PAGE_BUFFER, contentPerPage: CONTENT_PER_PAGE};
+  static defaultProps = {previousPageBuffer: PREVIOUS_PAGE_BUFFER, contentsPerPage: CONTENT_PER_PAGE};
 
   state = {page: 0};
 
@@ -42,7 +42,7 @@ export default class ListThrottle<T> extends Component<Props<T>, State> {
 
   renderNextCreatives = () => {
     const {page} = this.state;
-    if (page * this.props.contentPerPage! < this.props.items.length) {
+    if (page * this.props.contentsPerPage! < this.props.items.length) {
       this.setState({page: page + 1});
     }
   };
@@ -50,11 +50,11 @@ export default class ListThrottle<T> extends Component<Props<T>, State> {
   // TODO: consider memoization
   slicedItems = (): ReadonlyArray<T> => {
     // cannot be undefined because of defaultProps but TypeScript never know about that
-    const contentPerPage = this.props.contentPerPage!;
+    const contentsPerPage = this.props.contentsPerPage!;
     const previousPageBuffer = this.props.previousPageBuffer!;
 
-    const currentHead = this.state.page * contentPerPage;
-    return this.props.items.slice(Math.max(0, currentHead - contentPerPage * previousPageBuffer), currentHead + contentPerPage);
+    const currentHead = this.state.page * contentsPerPage;
+    return this.props.items.slice(Math.max(0, currentHead - contentsPerPage * previousPageBuffer), currentHead + contentsPerPage);
   };
 
   render() {
