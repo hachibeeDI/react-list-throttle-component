@@ -31,6 +31,10 @@
     "url": "https://github.com/hachibeeDI/react-list-throttle-component/issues"
   },
   "homepage": "https://github.com/hachibeeDI/react-list-throttle-component#readme",
+  "peerDependencies": {
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
