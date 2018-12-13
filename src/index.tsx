@@ -16,8 +16,8 @@ interface State {
 
 interface ChildArgument<T> {
   page: number;
-  renderPrevCreatives(): void;
-  renderNextCreatives(): void;
+  renderPrevItems(): void;
+  renderNextItems(): void;
   renderPage(page: number): void;
   throttledItems: ReadonlyArray<T>;
 }
@@ -42,14 +42,14 @@ export default class ListThrottle<T> extends Component<Props<T>, State> {
     return this.props.items !== nextProps.items;
   }
 
-  renderPrevCreatives = () => {
+  renderPrevItems = () => {
     const {page} = this.state;
     if (page > this.props.previousPageBuffer!) {
       this.setState({page: page - 1});
     }
   };
 
-  renderNextCreatives = () => {
+  renderNextItems = () => {
     const {page} = this.state;
     if (page * this.props.contentsPerPage! < this.props.items.length) {
       this.setState({page: page + 1});
@@ -63,8 +63,8 @@ export default class ListThrottle<T> extends Component<Props<T>, State> {
   render() {
     return this.props.children({
       page: this.state.page,
-      renderPrevCreatives: this.renderPrevCreatives,
-      renderNextCreatives: this.renderNextCreatives,
+      renderPrevItems: this.renderPrevItems,
+      renderNextItems: this.renderNextItems,
       renderPage: this.renderPage,
       throttledItems: slicedItems(this.props.items, this.state.page, this.props.contentsPerPage!, this.props.previousPageBuffer!),
     });

@@ -23,10 +23,10 @@ import ListThrottle from 'react-list-throttle';
 
 return (
   <ListThrottle items={strs}>
-    {({renderPrevCreatives, renderNextCreatives, throttledItems}) => (
+    {({renderPrevItems, renderNextItems, throttledItems}) => (
       <SomeAwesomeComponentSupportsScroll
-        superHandlerCatchOnScrollTop={renderPrevCreatives}
-        superHandlerCatchOnScrollEnd={renderNextCreatives}
+        superHandlerCatchOnScrollTop={renderPrevItems}
+        superHandlerCatchOnScrollEnd={renderNextItems}
       >
         <ul>
           {throttledItems.map(str => (
@@ -50,9 +50,9 @@ And also, there is no functionality supports handling `onScroll` event. So if yo
 
 interface ChildArgument<T> {
   // function to call previous page which is intented to use event handler for kinda `onScrollTop`
-  renderPrevCreatives(): void;
+  renderPrevItems(): void;
   // function to call next page which is intented to use event handler for kinda `onScrollEnd`
-  renderNextCreatives(): void;
+  renderNextItems(): void;
   throttledItems: ReadonlyArray<T>;
 }
 
