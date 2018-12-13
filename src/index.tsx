@@ -26,7 +26,7 @@ interface Props<T> {
   items: ReadonlyArray<T>;
   previousPageBuffer?: number;
   contentsPerPage?: number;
-  children(arg: Partial<ChildArgument<T>>): ReactNode;
+  children(arg: ChildArgument<T>): ReactNode;
 }
 
 export default class ListThrottle<T> extends Component<Props<T>, State> {

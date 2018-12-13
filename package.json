@@ -1,6 +1,6 @@
 {
   "name": "react-list-throttle-component",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Form library for React",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
