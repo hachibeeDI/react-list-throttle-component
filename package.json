@@ -1,6 +1,6 @@
 {
   "name": "react-list-throttle-component",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Form library for React",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -20,7 +20,6 @@
   },
   "keywords": [
     "react",
-    "react-dom",
     "list",
     "infinite-scroll",
     "list-throttle"
@@ -32,24 +31,13 @@
   },
   "homepage": "https://github.com/hachibeeDI/react-list-throttle-component#readme",
   "peerDependencies": {
-    "react": ">=16.6.0",
-    "react-dom": ">=16.6.0"
+    "react": ">=16.6.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.0.0",
     "@types/memoize-one": "^3.1.1",
     "@types/react": "^16.7.17",
-    "@types/react-dom": "^16.0.11",
-    "babel-loader": "^8.0.2",
     "prettier": "^1.14.0",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.14.0",
     "tslint-plugin-prettier": "^2.0.1",
